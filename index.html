@@ -14,15 +14,15 @@
 <body class="font-poppins">
     <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
         <!-- home screen -->
-        <section class="home text-white flex min-h-screen justify-center  items-center ">
+        <section id="homescreen" class=" text-white flex min-h-screen justify-center  items-center ">
             <div class="flex flex-col items-center space-y-6 ">
                 <h1 class=" text-8xl font-anton uppercase">Alpha Clash</h1>
                 <p>Unleash Your Keyboard Kun g Fu : Press "Enter" to Play</p>
-                <button class="btn bg-white text-black">Play</button>
+                <button onclick="paly()" class="btn bg-white text-black">Play</button>
             </div>
         </section>
         <!-- playground-start -->
-        <section class="play-ground hidden">
+        <section id="play-ground" class=" hidden">
             <div class="flex flex-col justify-center items-center space-y-12 pt-10">
                 <!-- screen   -->
                 <div
@@ -98,6 +98,8 @@
             </div>
         </section>
     </main>
+    <script src="./scripts/ulitiy.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
