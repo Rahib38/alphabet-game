@@ -1,11 +1,3 @@
-function paly() {
-    const homeSection = document.getElementById('homescreen');
-    homeSection.classList.add('hidden');
-
-    const playgroundSection = document.getElementById('play-ground');
-    playgroundSection.classList.remove('hidden');
-    continueGame();
-}
 
 function handleKeyboardButtonPress(event){
     const playerPadded = event.key;
@@ -45,6 +37,10 @@ function handleKeyboardButtonPress(event){
         const updateLife = currentLife - 1;
         setTextElementValueById('current-life', updateLife);
 
+        if(updateLife=== 0){
+            gameOver();
+        }
+
     }
 
 }
@@ -57,4 +53,19 @@ function continueGame(){
     const currentAlphabetElement = document.getElementById('current-alphabet');
     currentAlphabetElement.innerText = alphabet;
     setBackgroundColorById(alphabet)
+}
+function paly() {
+    hideElementById('home-screen');
+    hideElementById('final-score')
+    showElementById('play-ground');
+
+    setTextElementValueById('current-life', 5);
+    setTextElementValueById('current-score', 0);
+    
+    continueGame();
+}
+
+function gameOver(){
+    hideElementById('play-ground');
+    showElementById('final-score');
 }
