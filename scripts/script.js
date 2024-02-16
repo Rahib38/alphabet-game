@@ -3,6 +3,10 @@ function handleKeyboardButtonPress(event){
     const playerPadded = event.key;
     console.log ('player pressed',playerPadded);
 
+    if(playerPadded === 'Escape'){
+        gameOver();
+    }
+
     const currentAlphabetElement = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElement.innerText;
     const expectedAlphabet = currentAlphabet.toLowerCase ();
@@ -68,4 +72,10 @@ function paly() {
 function gameOver(){
     hideElementById('play-ground');
     showElementById('final-score');
+
+    const lastScore = getTextElementValueById('current-score');
+    setTextElementValueById('last-score', lastScore);
+
+    const currentAlphabet = getElementTextById('current-alphabet');
+    removeBackgroundColorById(currentAlphabet);
 }
